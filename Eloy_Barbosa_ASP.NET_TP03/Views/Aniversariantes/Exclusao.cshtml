@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Exclusao";
+}
+
+@model Eloy_Barbosa_ASPNET_TP03.Models.Aniversariante
+
+    <div class="container text-center">
+        <h1 class="display-4">Apagar Aniversariante</h1><br />
+        <h4 class="display-4">Gostaria de apagar os dados de @Model.Nome?</h4>
+
+        <form method="post" asp-action="Excluir" asp-controller="Aniversariantes" asp-route-id="@Model.Id">
+            <button type="submit" class="btn btn-danger">Apagar</button>
+            <a href="/Aniversariantes/exibir" class="btn btn-dark">Cancelar</a>
+        </form>
+    </div>

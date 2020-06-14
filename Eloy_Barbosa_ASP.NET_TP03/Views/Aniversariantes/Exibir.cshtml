@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Exibir";
+}
+
+@model List<Aniversariante> 
+
+    <div class="container text-center">
+        <h1 class="display-4">Aniversáriantes Cadastrados</h1>
+
+        @if (!String.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div class="alert alert-success" role="alert">
+                @ViewBag.Message
+            </div>
+        }
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sobrenome</th>
+                    <th scope="col">Data Aniversário</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">apagar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Aniversariante in Model)
+                {
+                    <tr>
+                        <td>@Aniversariante.Nome</td>
+                        <td>@Aniversariante.Sobrenome</td>
+                        <td>@Aniversariante.Nascimento</td>
+                        <td><a href="/Aniversariantes/Edicao?id=@Aniversariante.Id">Editar</a></td>
+                        <td><a href="/Aniversariantes/Exclusao?id=@Aniversariante.Id">Apagar</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+

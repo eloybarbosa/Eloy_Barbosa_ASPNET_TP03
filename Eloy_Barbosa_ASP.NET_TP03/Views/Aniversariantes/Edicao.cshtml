@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Edicao";
+}
+
+@model Eloy_Barbosa_ASPNET_TP03.Models.Aniversariante
+
+<div class="container">
+    <h1 class="display-4">Editar Aniversáriante</h1>
+
+    <form method="post" asp-action="Editar" asp-controller="Aniversariantes" asp-route-id="@Model.Id">
+        <div class="form-group">
+            <label for="Nome">Nome</label><br />
+            <input id="Nome" class="form-control" type="text" asp-for="Nome" required />
+        </div>
+        <div class="form-group">
+            <label for="Sobrenome">Sobrenome</label><br />
+            <input Id="Sobrenome " class="form-control" type="text" asp-for="Sobrenome" required />
+        </div>
+        <div class="form-group">
+            <label for="Nascimento">Data de Nascimento</label><br />
+            <input id="Nascimento" class="form-control" type="date" asp-for="Nascimento" required />
+        </div>
+        <button type="submit" class="btn btn-dark">Atualizar</button>
+        <a href="/Aniversariantes/exibir" class="btn btn-dark">Cancelar</a>
+    </form>
+</div>
+
